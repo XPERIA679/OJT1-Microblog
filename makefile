@@ -8,9 +8,6 @@ setup-permissions:
 	docker-compose exec php chmod -R 777 /var/www/html/storage/logs
 	docker-compose exec php chown -R www-data:www-data /var/www/html/storage/logs
 
-copy-env:
-	cp $(BASE_DIR)/.env $(BASE_DIR)/src/.env
-
 laravel-project:
 	docker-compose exec php composer create-project laravel/laravel /var/www/html/
 
@@ -19,4 +16,3 @@ migrate:
 
 down-up:
 	docker-compose down && docker-compose up -d --build
-	
