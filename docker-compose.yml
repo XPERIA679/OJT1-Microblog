@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   nginx:
@@ -49,19 +49,19 @@ services:
       - "3400:80"
     networks:
       microblog-network: {}
-    
-  # node:
-  #   build:
-  #     context: ./src 
-  #     dockerfile: ../docker/node/Dockerfile  
-  #   volumes:
-  #     - ./src:/var/www/html
-  #   networks:
-  #     - microblog-network
-  #   command: sh -c "npm install && npm run dev"
+
+  node:
+    build:
+      context: ./src
+      dockerfile: ../docker/node/Dockerfile
+    volumes:
+      - ./src:/var/www/html
+    networks:
+      - microblog-network
+    command: sh -c "npm install && npm run dev"
 
 networks:
-  microblog-network: 
+  microblog-network:
     driver: bridge
 
 volumes:
