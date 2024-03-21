@@ -35,22 +35,18 @@ Ubuntu cmd:
 - code .
 ```
 ```bash
-Vscode terminal:
+Vscode terminal(bash):
 
 - git init
-- git clone -b Docker https://github.com/XPERIA679/OJT1-Microblog
+- git clone -b dev https://github.com/XPERIA679/OJT1-Microblog
 - cd OJT1-Microblog
 - sudo apt install make
 - make build 
-```
-```bash
-Build Laravel Project:
-
-- make laravel-project
 - make permissions
-- make copy-env
- -> uncomment node service in docker-compose.yml
+-> uncomment node service in docker-compose.yml
 - make down-up
+- make vendor
+-> configure your .env file
 - make migrate
 ```
 DONE!
